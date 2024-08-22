@@ -1,16 +1,19 @@
-
-
 import streamlit as st
 
-# Create an iterator from a list of keys
-keys = iter(['key1', 'key2', 'key3'])
+# Define the number of iterations
+num_iterations = 5
 
-# Use the next key from the iterator for the input box
-key_for_input = next(keys)
-while True:
-  # Create a single text input box with a dynamic key
-  user_input = st.text_input("Enter something:", key=key_for_input)
-  
-  # Display the input value and the key used
-  st.write(f"You entered: {user_input}")
-  st.write(f"Using key: {key_for_input}")
+# Loop through the specified number of iterations
+for i in range(num_iterations):
+    st.write(f"Iteration {i + 1}")
+    
+    # Display a text input box
+    user_input = st.text_input(f"Enter something for iteration {i + 1}")
+    
+    # Check if the user has entered something
+    if user_input:
+        st.write(f"You entered: {user_input}")
+    
+    # Add a button to proceed to the next iteration
+    if st.button(f"Next {i + 1}"):
+        continue
