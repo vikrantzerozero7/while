@@ -9,6 +9,7 @@ if 'stop' not in st.session_state:
 
 # Continuously ask for input until 'stop' button is pressed
 while not st.session_state.stop:
+    st.experimental_rerun()
     user_input = st.text_input("Enter something:")
     if user_input:
         result = process_input(user_input)
