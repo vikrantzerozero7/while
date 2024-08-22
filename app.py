@@ -1,7 +1,7 @@
 import streamlit as st
-while True:
-    st.session_state.key = None
-    query = st.text_input("enter query")
-    st.write(query)
-    query = None
-    st.session_state.key = None
+import time
+
+# Generate a dynamic key based on the current time
+dynamic_key = f"text_input_{int(time.time())}"
+
+query = st.text_input("Enter query", key=dynamic_key)
