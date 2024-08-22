@@ -2,7 +2,7 @@ import streamlit as st
 import time
 x = 9 
 # Generate a dynamic key based on the current time
-if x = 9: 
+if x == 9: 
   
   query = st.text_input("Enter query")
   
