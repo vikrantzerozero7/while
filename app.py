@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 x = 9 
+st.write(f"text_input_{int(time.time())}")
 # Generate a dynamic key based on the current time
 if x == 9: 
   
