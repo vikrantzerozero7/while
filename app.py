@@ -1,4 +1,4 @@
-= import streamlit as st
+import streamlit as st
 import time
 
 # Generate a dynamic key based on the current time
