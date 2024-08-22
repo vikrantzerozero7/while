@@ -1,3 +1,5 @@
+import module2
+
 def main():
     if upload =="upload_successful":
         query = st.text_input("Ask Question")
