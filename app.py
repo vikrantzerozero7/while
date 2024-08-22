@@ -3,3 +3,4 @@ while True:
     st.session_state.key = None
     query = st.text_input("enter query")
     st.write(query)
+    st.session_state.key = None
