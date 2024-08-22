@@ -1,4 +1,5 @@
 import module2
+from module2 import *
 import streamlit as st
 
 query = st.text_input("Ask Question")
