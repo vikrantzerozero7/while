@@ -1,12 +1,6 @@
-import streamlit as st
-import time
-x = 9 
-st.write(f"text_input_{int(time.time())}")
-# Generate a dynamic key based on the current time
-if x == 9: 
-  
-  query = st.text_input("Enter query")
-  
+widget_id = (id for id in range(1, 100_00))
+for image in image_file:
+    # Do things here
 
-  st.write(query)
-  st.session_state.clear()
+    if(query = st.text_input('Predicted', key=next(widget_id):
+        st.write(qwery)
