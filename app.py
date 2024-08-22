@@ -6,3 +6,4 @@ dynamic_key = f"text_input_{int(time.time())}"
 
 query = st.text_input("Enter query", key=dynamic_key)
 time.sleep(3)
+st.write(query)
