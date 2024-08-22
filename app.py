@@ -1,4 +1,5 @@
 import module2
+import streamlit as st
 
 query = st.text_input("Ask Question")
 # prompt: get question and answer part
