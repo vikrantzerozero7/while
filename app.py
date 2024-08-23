@@ -1,20 +1,16 @@
-import module2
-from module2 import *
 import streamlit as st
+import fitz  # PyMuPDF
 
-query = st.text_input("Ask Question")
-# prompt: get question and answer part
-if st.button('Submit Answer'):
-    result = chain.invoke(query)
+# File uploader to select multiple PDF files
+uploaded_files = st.sidebar.file_uploader("Choose a file", accept_multiple_files=True, key="fileUploader", type="pdf")
 
-    if "answer is not available in the context" in result:
-        st.write("No answer")
-    else:
-        st.write(result)
-        docs1 = vector_store.similarity_search(query,k=3)
-        data_dict = docs1[0].metadata
-        st.write("\nBook Name : ",data_dict["Book name"])
-        st.write("Chapter : ",data_dict["Chapter"])
-        st.write("Title : ",data_dict["Topic"])
-        st.write("Subtopic : ",data_dict["Subtopic"])
-        st.write("Subsubtopic : ",data_dict["Subsubtopic"])
+# Initialize an empty list to store the opened PDF documents
+pdf_d = []
+
+if uploaded_files is not None:
+    for uploaded_file in uploaded_files:
+        df = fitz.open(stream=uploaded_file.read(), filetype="pdf")  # Open the uploaded PDF file
+        pdf_d.append(df)  # Add the opened PDF document to the list
+
+# Now pdf_d contains all the opened PDF documents
+st.write(f"{len(pdf_d)} PDF(s) have been uploaded and opened.")
